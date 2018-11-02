@@ -1,6 +1,6 @@
-const Masto = require('mastodon');
+const Masto = require("mastodon");
 
-const { tootType } = require('./schema');
+const { tootType } = require("./schema");
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }, configOptions) => {
   const { createNode } = actions;
@@ -34,11 +34,14 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }, configOpt
     });
   };
 
-  return M.get(`accounts/${configOptions.user_id}/statuses`, {
-    exclude_replies: true,
-    limit: configOptions.limit
-  }).then(resp => {
-    createNodes(resp.data);
+  return M.get("accounts/verify_credentials").then(resp1 => {
+    const { id } = resp1.data;
+    return M.get(`accounts/${id}/statuses`, {
+      exclude_replies: true,
+      limit: configOptions.limit
+    }).then(resp2 => {
+      createNodes(resp2.data);
+    });
   });
 };
 
