@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-source-mastodon",
+  "version": "1.0.0",
+  "description": "A GatsbyJS source plugin for fetching user toots from Mastodon",
+  "repository": "https://github.com/hbish/gatsby-source-mastodon",
+  "keywords": [
+    "GatsbyJS",
+    "Mastodon",
+    "gatsby-plugin",
+    "gatsby"
+  ],
+  "author": "Ben Shi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hbish/gatsby-source-mastodon/issues"
+  },
+  "homepage": "https://github.com/hbish/gatsby-source-mastodon#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "cross-env": "^5.1.0",
+    "jest": "^21.2.1"
+  },
+  "dependencies": {
+    "mastodon": "^1.2.2"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore **/__tests__",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore **/__tests__",
+    "test": "jest"
+  }
+}
