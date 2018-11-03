@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-mastodon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A GatsbyJS source plugin for fetching user toots from Mastodon",
   "repository": "https://github.com/hbish/gatsby-source-mastodon",
   "keywords": [
