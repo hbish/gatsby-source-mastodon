@@ -1,10 +1,14 @@
 # gatsby-source-mastodon
 
-A Gatsby source plugin for fetching user toots from Mastodon. Currently only support a user's own toots.
+![gatsby-source-mastodon logo](./static/logo.png)
+
+A Gatsby source plugin for fetching user toots from Mastodon.
+
+Currently only support a user's own toots.
 
 ## Usage
 
-You will need to create an `Application` from your Mastodon instance (e.g. https://aus.social/settings/applications). At the very minimum you will need to grant `read` access.
+You will need to create an `Application` with `read` permission from your Mastodon instance (e.g. https://aus.social/settings/applications).
 
 Add the following block of configuration into your `gatsby-config.js`. Replace fields surrounded by `***` with the correct details.
 
@@ -14,19 +18,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-mastodon',
       options: {
+        // The api url of your mastodon instance (e.g https://aus.social/api/v1)
         api_url: '***MASTODON_INSTANCE_API_URL***',
+        // Number of toots to return
         limit: 25,
+        // Access token for your Mastodon application
         access_token: '***MASTODON_ACCESS_TOKEN***',
       },
   ],
 }
 ```
-
-### Field Definition
-
-`api_url` - the api url of your mastodon instance (e.g https://aus.social/api/v1)
-`limit` - number of toots to return
-`access_token` - the access token for your mastodon application
 
 ## Query Mastodon Data
 
