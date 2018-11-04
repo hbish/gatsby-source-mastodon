@@ -2,7 +2,10 @@ const Masto = require("mastodon");
 
 const { tootType } = require("./schema");
 
-exports.sourceNodes = ({ actions, createNodeId, createContentDigest }, configOptions) => {
+exports.sourceNodes = (
+  { actions, createNodeId, createContentDigest },
+  configOptions
+) => {
   const { createNode } = actions;
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it

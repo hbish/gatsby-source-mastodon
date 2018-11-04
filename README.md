@@ -1,6 +1,6 @@
 # gatsby-source-mastodon
 
-![gatsby-source-mastodon logo](./static/logo.png)
+![gatsby-source-mastodon logo](https://github.com/hbish/gatsby-source-mastodon/raw/master/static/logo.png)
 
 A Gatsby source plugin for fetching user toots from Mastodon.
 
@@ -40,6 +40,7 @@ A sample of the query is included below, for all available field please check th
       node {
         id
         url
+        content
         reblogs_count
         favourites_count
         account {
